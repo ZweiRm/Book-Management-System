@@ -60,6 +60,9 @@ public class JDBCExcutor {
 	}
 
 	public static void main(String[] args) throws SQLException {
+/**
+ * 传统方式
+ */
 		JDBCExcutor ex = JDBCExcutor.getJDBCExcutor();
 		String sql = "SELECT * FROM t_USER";
 		ResultSet rs = ex.excuteQuery(sql);
