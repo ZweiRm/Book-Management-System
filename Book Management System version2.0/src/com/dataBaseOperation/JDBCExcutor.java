@@ -48,20 +48,50 @@ public class JDBCExcutor {
 	}
 
 	// 数据库查询
-	public ResultSet excuteQuery(String sql) throws SQLException {
-		ResultSet result = sta.executeQuery(sql);
-		return result;
+	public ResultSet excuteQuery(String sql){
+		ResultSet result;
+		try {
+			result = sta.executeQuery(sql);
+			return result;
+		} catch (Exception e) {
+			throw new QueryException("Query Error");
+		}
 	}
 
-	// 数据库更新（增加、删除、修改）
-	public int excuteUpdate(String sql) throws SQLException {
-		int result = sta.executeUpdate(sql);
-		return result;
+//数据库更新（增加、删除、修改）- 测试
+//	public int excuteUpdate(String sql){
+//		int result;
+//		try {
+//			result = sta.executeUpdate(sql);
+//			return result;
+//		} catch (SQLException e) {
+//			throw new UpdateException("Update Error");
+//		}
+//	}
+	// 数据库更新
+	public int excuteUpdate(String sql) {
+		int result = -1;
+		try {
+			// 进行更新操作
+			sta.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+			
+			// 获取更新结果
+			ResultSet rs = sta.getGeneratedKeys();
+			
+			// 对更新结果遍历，取到最后一个更新结果
+			while (rs.next()) {
+				result = rs.getInt(1);
+			}
+			return result;
+		} catch (Exception e) {
+			throw new UpdateException("Update Error");
+		}
 	}
 
+	// 测试函数
 	public static void main(String[] args) throws SQLException {
 /**
- * 传统方式
+ * 传统方式查询
  */
 		JDBCExcutor ex = JDBCExcutor.getJDBCExcutor();
 		String sql = "SELECT * FROM t_USER";
