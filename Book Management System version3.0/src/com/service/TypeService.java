@@ -45,13 +45,14 @@ public class TypeService {
 	// 测试函数
 	public static void main(String[] args) {
 		TypeService ts = new TypeService(new TypeDao());
-		Type ty = new Type();
-		for(int i = 1; i < 30; i++) {
-			ty.setID(i + "");
-			ty.setTYPE_NAME("***" + i + "111");
-			ty.setTYPE_INTRO("xxx" + i + "222");
-			ts.add(ty);
-		}
+		Type ty = new Type("34", "EL1", "EL2");
+		ts.update(ty);
+//		for(int i = 1; i < 30; i++) {
+//			ty.setTYPE_NAME("***" + i + "111");
+//			ty.setTYPE_INTRO("xxx" + i + "223");
+//			//ts.add(ty);
+//			ts.update(ty);
+//		}
 		
 		System.out.println("Name\t" + "Introduce\t");
 		Collection<Type> types = ts.findAll();

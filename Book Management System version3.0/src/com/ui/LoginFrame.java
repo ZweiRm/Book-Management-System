@@ -13,6 +13,7 @@ import com.bean.User;
 import com.common.DataException;
 import com.common.DataUtil;
 import com.dataBaseOperation.JDBCExcutor;
+import com.ui_normal.MainFrame_Normal;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;

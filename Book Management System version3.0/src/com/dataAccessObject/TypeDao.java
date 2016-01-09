@@ -44,8 +44,10 @@ public class TypeDao extends CommonDao {
 	// 测试函数
 	public static void main(String[] args) {
 		TypeDao td = new TypeDao();
-		Type t = new Type("1", "Computer", "SXAU PRESS");
-		td.add(t);
+		//Type t = new Type("1", "Computer", "SXAU PRESS");
+		Type t1 = new Type("34", "EL", "EL"); 
+		//td.add(t);
+		td.update(t1);
 		System.out.println("Operation Success.");
 	}
 }
