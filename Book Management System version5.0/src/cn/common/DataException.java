@@ -1,4 +1,4 @@
-package com.common;
+package cn.common;
 
 public class DataException extends RuntimeException {
 

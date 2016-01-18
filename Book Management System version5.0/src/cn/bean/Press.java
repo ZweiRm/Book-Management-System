@@ -1,8 +1,8 @@
-package com.bean;
+package cn.bean;
 
 public class Press extends ValueObject {
 
-	private String PRS_NAME, PRS_TEL, PRS_CONT, PRS_INTRO;
+	private String PRS_NAME, PRS_TEL, PRS_LINK_MAN, PRS_INTRO;
 
 	public String getPRS_NAME() {
 		return PRS_NAME;
@@ -20,12 +20,12 @@ public class Press extends ValueObject {
 		PRS_TEL = pRS_TEL;
 	}
 
-	public String getPRS_CONT() {
-		return PRS_CONT;
+	public String getPRS_LINK_MAN() {
+		return PRS_LINK_MAN;
 	}
 
-	public void setPRS_CONT(String pRS_CONT) {
-		PRS_CONT = pRS_CONT;
+	public void setPRS_LINK_MAN(String pRS_LINK_MAN) {
+		PRS_LINK_MAN = pRS_LINK_MAN;
 	}
 
 	public String getPRS_INTRO() {
@@ -36,15 +36,11 @@ public class Press extends ValueObject {
 		PRS_INTRO = pRS_INTRO;
 	}
 
-	public Press() {
-	}
-
-	public Press(String id, String prs_name, String prs_tel, String prs_cont, String prs_intro) {
+	public Press(String id, String prs_name, String prs_tel, String prs_link_man, String prs_intro) {
 		setID(id);
 		PRS_NAME = prs_name;
 		PRS_TEL = prs_tel;
-		PRS_CONT = prs_cont;
+		PRS_LINK_MAN = prs_link_man;
 		PRS_INTRO = prs_intro;
 	}
-
 }

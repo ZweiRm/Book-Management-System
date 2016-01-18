@@ -1,12 +1,11 @@
-package com.bean;
+package cn.bean;
 
 public class Book extends ValueObject {
 
 	private String BOOK_NAME, BOOK_INTRO, BOOK_PRICE, AUTHOR, TYPE_ID_FK, PRS_ID_FK, REPERTORY_SIZE, IMAGE_URL;
+	private Type Type;
+	private Press prs;
 
-	private Type tp;
-	private Press pr;
-	
 	public String getBOOK_NAME() {
 		return BOOK_NAME;
 	}
@@ -71,35 +70,32 @@ public class Book extends ValueObject {
 		IMAGE_URL = iMAGE_URL;
 	}
 
-	public Type getTp() {
-		return tp;
+	public Type getType() {
+		return Type;
 	}
 
-	public void setTp(Type tp) {
-		this.tp = tp;
+	public void setType(Type type) {
+		Type = type;
 	}
 
-	public Press getPr() {
-		return pr;
+	public Press getPrs() {
+		return prs;
 	}
 
-	public void setPr(Press pr) {
-		this.pr = pr;
+	public void setPrs(Press prs) {
+		this.prs = prs;
 	}
 
-	public Book() {
-	}
-
-	public Book(String id, String book_name, String book_intro, String book_price, String author, String type_id_fk,
-			String pes_id_fk, String repertory_size, String image_url) {
-		setID(id);
-		BOOK_NAME = book_name;
-		BOOK_INTRO = book_intro;
-		BOOK_PRICE = book_price;
-		AUTHOR = author;
-		TYPE_ID_FK = type_id_fk;
-		PRS_ID_FK = pes_id_fk;
-		REPERTORY_SIZE = repertory_size;
-		IMAGE_URL = image_url;
+	public Book(String ID, String BOOK_NAME, String BOOK_INTRO, String BOOK_PRICE, String AUTHOR, String TYPE_ID_FK,
+			String PRS_ID_FK, String REPERTORY_SIZE, String IMAGE_URL) {
+		setID(ID);
+		this.BOOK_NAME = BOOK_NAME;
+		this.BOOK_INTRO = BOOK_INTRO;
+		this.BOOK_PRICE = BOOK_INTRO;
+		this.AUTHOR = AUTHOR;
+		this.TYPE_ID_FK = TYPE_ID_FK;
+		this.PRS_ID_FK = PRS_ID_FK;
+		this.REPERTORY_SIZE = REPERTORY_SIZE;
+		this.IMAGE_URL = IMAGE_URL;
 	}
 }

@@ -1,4 +1,4 @@
-package com.bean;
+package cn.bean;
 
 public class Type extends ValueObject {
 
@@ -21,12 +21,13 @@ public class Type extends ValueObject {
 	}
 
 	public Type() {
+
 	}
 
 	public Type(String id, String type_name, String type_intro) {
 		setID(id);
 		TYPE_NAME = type_name;
 		TYPE_INTRO = type_intro;
-	}
 
+	}
 }
